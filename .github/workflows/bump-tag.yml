@@ -3,7 +3,7 @@ name: Build
 on: push
 
 jobs:
-  Sync Tag:
+  SyncTag:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout Repo
