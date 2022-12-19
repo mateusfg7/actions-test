@@ -9,8 +9,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
       
-      - name: Bump Tag
+      - name: Setup Deno
         uses: denoland/setup-deno@v1.1.1
         with:
           deno-version: v1.x # Run with latest stable Deno.
+      
+      - name: Bump Tag
         run: deno task bump-tag
