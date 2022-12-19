@@ -1,0 +1,16 @@
+name: Build
+
+on: push
+
+jobs:
+  Sync Tag:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      
+      - name: Bump Tag
+        uses: denoland/setup-deno@v1.1.1
+        with:
+          deno-version: v1.x # Run with latest stable Deno.
+        run: deno task bump-tag
