@@ -1,6 +1,6 @@
 {
   "name": "actions-test",
-  "version": "2.0.3-alpha.2",
+  "version": "4.0.1-beta",
   "main": "index.js",
   "repository": "git@github.com:mateusfg7/actions-test.git",
   "author": "Mateus Felipe Gonçalves <mateusfelipefg77@gmail.com>",
