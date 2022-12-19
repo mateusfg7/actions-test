@@ -9,13 +9,10 @@ function log(text: string) {
   console.log(`LOG | ${text}`)
 }
 
-log('Get current working directory')
-const dir = patch.join(Deno.cwd(), "./");
-
-log(`Working directory: ${dir}`)
+log(`Working directory: ${Deno.cwd()}`)
 
 log('Init simple-git instance')
-const simplegit: SimpleGit = simpleGit(dir);
+const simplegit: SimpleGit = simpleGit(Deno.cwd());
 
 log('Get latest repository tag and package version')
 const tags = await simplegit.tags();
