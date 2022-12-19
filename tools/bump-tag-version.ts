@@ -9,17 +9,20 @@ function log(text: string) {
   console.log(`LOG | ${text}`)
 }
 
+log('Get current working directory')
+const dir = patch.join(Deno.cwd(), "../");
+
 log(`Working directory: ${Deno.cwd()}`)
 
 log('Init simple-git instance')
-const simplegit: SimpleGit = simpleGit(Deno.cwd());
+const simplegit: SimpleGit = simpleGit(dir);
 
 log('Get latest repository tag and package version')
 const tags = await simplegit.tags();
 const lastTag = tags.latest;
 const packageVersion = packageJson.version;
 
-log('Verify if latest tag is not undeined')
+log('Verify if latest tag is not undefined')
 
 if (lastTag) {
   log(`Latest Tag: ${lastTag}\nPackage Version: ${packageVersion}\n`);
