@@ -14,15 +14,16 @@ const lastTag = tags.latest;
 const packageVersion = packageJson.version;
 
 if (lastTag) {
-  console.log(`Latest Tag: ${lastTag}\nPackage Version: ${packageVersion}`);
-  console.log(`Package Version is greather than Latest Tag? ${semver.gt(packageVersion, lastTag)}`);
+  console.log(`Latest Tag: ${lastTag}\nPackage Version: ${packageVersion}\n\n`);
   
   if (semver.gt(packageVersion, lastTag)) {
-    console.log('Bump Tag')
+    console.log('Synchronizing tag')
     await simplegit.addTag(packageVersion)
+
+    console.log('Pushing tags')
+    await simplegit.pushTags()
+  } else {
+    console.log('Last tag and package version are synchronized')
   }
-  
-  console.log('Pushing Tag')
-  await simplegit.pushTags()
 }
 
