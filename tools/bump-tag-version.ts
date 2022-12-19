@@ -33,7 +33,6 @@ if (semver.gt(packageVersion, lastTag)) {
     dir,
     remote: 'origin',
     ref: packageVersion,
-    onAuth: () => ({ username: Deno.env.get("GITHUB_TOKEN") }),
   })
   console.log(pushResult)
 }
