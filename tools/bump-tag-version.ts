@@ -14,7 +14,7 @@ const lastTag = tags.latest;
 const packageVersion = packageJson.version;
 
 if (lastTag) {
-  console.log(`Latest Tag: ${lastTag}\nPackage Version: ${packageVersion}\n\n`);
+  console.log(`Latest Tag: ${lastTag}\nPackage Version: ${packageVersion}\n`);
   
   if (semver.gt(packageVersion, lastTag)) {
     console.log('Synchronizing tag')
