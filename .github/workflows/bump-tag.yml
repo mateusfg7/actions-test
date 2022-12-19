@@ -15,4 +15,7 @@ jobs:
           deno-version: v1.x # Run with latest stable Deno.
       
       - name: Bump Tag
+        run: deno task cache
+
+      - name: Bump Tag
         run: deno task bump-tag
