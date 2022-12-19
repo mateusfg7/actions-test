@@ -12,6 +12,8 @@ function log(text: string) {
 log('Get current working directory')
 const dir = patch.join(Deno.cwd(), "./");
 
+log(`Working directory: ${dir}`)
+
 log('Init simple-git instance')
 const simplegit: SimpleGit = simpleGit(dir);
 
@@ -34,5 +36,7 @@ if (lastTag) {
   } else {
     log('Last tag and package version are synchronized')
   }
+} else {
+  log('There is no latest tag')
 }
 
