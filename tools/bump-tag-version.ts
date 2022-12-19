@@ -1,6 +1,6 @@
 // @deno-types="npm:@types/semver"
 import semver from "npm:semver";
-import * as patch from "https://deno.land/std@0.170.0/node/path/mod.ts";
+import * as patch from "https://deno.land/std@0.170.0/path/mod.ts";
 import { simpleGit, SimpleGit } from 'npm:simple-git'; 
 
 import packageJson from '../package.json' assert {type: 'json' }
