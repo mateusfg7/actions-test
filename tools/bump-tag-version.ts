@@ -24,8 +24,6 @@ log(`Last Tag ${lastTag}\n`)
 
 log('Verify if latest tag is not undefined')
 if (lastTag) {
-  log(`Latest Tag: ${lastTag}\nPackage Version: ${packageVersion}\n`);
-  
   if (semver.gt(packageVersion, lastTag)) {
     log('Synchronizing tag')
     await simplegit.addTag(packageVersion)
